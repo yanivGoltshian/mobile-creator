@@ -12,9 +12,6 @@ export default class CreatorScreen extends Component {
     render() {
         return (
             <div className="creator-screen">
-                <Button type="fab">
-                    <i className="material-icons">add</i>
-                </Button>
                 <SectionSelect></SectionSelect>
             </div>
         );

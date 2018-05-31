@@ -1,0 +1,19 @@
+.add-section-buttons-container {
+  .hide-container {
+    display: none !important;
+  }
+
+  .buttons-container {
+
+    .section-btn {
+      background-color: white;
+      border: 0;
+      .section-icon {
+        width: 31px;
+        height: 30px;
+        fill: #CA81FF;
+      }
+    }
+  }
+}
+

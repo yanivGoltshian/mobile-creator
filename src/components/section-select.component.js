@@ -1,48 +1,67 @@
 import React, { Component } from 'react';
-import pubsub from 'pubsub-js';
 import Button from './button.component';
+import cn from 'classnames';
+import './section-select.style.scss';
+import 'pb-svg-icons/svg/formats/format-flip-cards-sm.svg';
+import 'pb-svg-icons/svg/formats/format-shorts-md.svg';
+import 'pb-svg-icons/svg/formats/format-list-md.svg';
+import 'pb-svg-icons/svg/formats/format-abstract-md.svg';
+import 'pb-svg-icons/svg/formats/format-personality-quiz-md.svg';
+import 'pb-svg-icons/svg/formats/format-trivia-md.svg';
+import 'pb-svg-icons/svg/formats/format-convo-md.svg';
+import 'pb-svg-icons/svg/core/image.svg';
+
 
 export default class SectionSelect extends Component {
     constructor(props) {
         super(props);
-        this.select = this.select.bind(this);
+        this.state = {
+            hideSelection: true,
+            icons: ['image','format-convo-md','format-trivia-md','format-personality-quiz-md','format-abstract-md','format-list-md','format-shorts-md','format-flip-cards-sm']
+        };
+        this.openSelection = this.openSelection.bind(this);
+        this.selectSelection = this.selectSelection.bind(this);
+        this.readIcon = this.readIcon.bind(this);
     }
 
-    select() {
-        pubsub.publish('navigate', {
-            screen: 'creator',
+    openSelection() {
+        this.setState({
+                hideSelection: !this.state.hideSelection
+            }
+        );
+    }
+
+    selectSelection(e) {
+        this.setState({
+            hideSelection: true
         });
+    }
+
+    readIcon() {
+        let particals = [];
+        this.state.icons.forEach((icon, index) => {
+            particals.push(
+                <button key={index}
+                    type="button"
+                        className='section-btn'
+                        onClick={this.selectSelection}>
+                    <svg className='section-icon'>
+                        <use xlinkHref={'#pb-icon-'+icon}/>
+                    </svg>
+                </button>)
+        });
+        return particals;
     }
 
     render() {
         return (
             <div className="add-section-buttons-container">
-                {/*<Button onClick={this.select} className="select-btn">select</Button>*/}
-                {/*<button id="demo-menu-lower-left"*/}
-                        {/*className="mdl-button mdl-js-button mdl-button--icon">*/}
-                    {/*<i className="material-icons">more_vert</i>*/}
-                {/*</button>*/}
-
-                {/*<ul className="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"*/}
-                    {/*htmlFor="demo-menu-lower-left">*/}
-                    {/*<li className="mdl-menu__item">Some Action</li>*/}
-                    {/*<li className="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>*/}
-                    {/*<li disabled className="mdl-menu__item">Disabled Action</li>*/}
-                    {/*<li className="mdl-menu__item">Yet Another Action</li>*/}
-                {/*</ul>*/}
-
-                <button id="demo-menu-lower-right"
-                        className="mdl-button mdl-js-button mdl-button--icon">
-                    <i className="material-icons">more_vert</i>
-                </button>
-
-                <ul className="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                    htmlFor="demo-menu-lower-right">
-                    <li className="mdl-menu__item">Some Action</li>
-                    <li className="mdl-menu__item">Another Action</li>
-                    <li disabled className="mdl-menu__item">Disabled Action</li>
-                    <li className="mdl-menu__item">Yet Another Action</li>
-                </ul>
+                <div className={this.state.hideSelection ? 'buttons-container hide-container' :'buttons-container'}>
+                    {this.readIcon()}
+                </div>
+                <Button type="fab" onClick={this.openSelection}>
+                    <i className="material-icons">add</i>
+                </Button>
             </div>
         );
     }
