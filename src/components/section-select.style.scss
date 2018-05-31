@@ -1,9 +1,24 @@
 .add-section-buttons-container {
+  .plus-btn {
+    border: 1px solid #aaa;
+    background-color: #CA81FF;
+    bottom: 25px;
+    position: absolute;
+    left: 43%;
+  }
+
   .hide-container {
-    display: none !important;
+    display: none;
   }
 
   .buttons-container {
+    border: 1px solid #aaa;
+    bottom: 85px;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 172px;
+    margin-left: 27%;
 
     .section-btn {
       background-color: white;

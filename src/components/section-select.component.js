@@ -59,7 +59,7 @@ export default class SectionSelect extends Component {
                 <div className={this.state.hideSelection ? 'buttons-container hide-container' :'buttons-container'}>
                     {this.readIcon()}
                 </div>
-                <Button type="fab" onClick={this.openSelection}>
+                <Button className="plus-btn" type="fab" onClick={this.openSelection}>
                     <i className="material-icons">add</i>
                 </Button>
             </div>
