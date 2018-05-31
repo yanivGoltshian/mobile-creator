@@ -42,6 +42,7 @@ export default class CreatorScreen extends Component {
         const itemToSave = ItemService.getItemJson();
         CreatorService.save(itemToSave).then((response) => {
             console.log('response', response);
+            window.location.href = "https://alpha.playbuzz.com/item/" + response.GameMetaData.GameId;
         });
     }
 
@@ -49,6 +50,7 @@ export default class CreatorScreen extends Component {
         const itemToSave = ItemService.getItemJson();
         CreatorService.save(itemToSave).then((response) => {
             console.log('response', response);
+            window.location.href = "https://alpha.playbuzz.com/item/" + response.GameMetaData.GameId;
         });
     }
 
