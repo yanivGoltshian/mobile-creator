@@ -7,7 +7,8 @@
     "clean": "rimraf build",
     "build": "webpack --env.NODE_ENV=production",
     "deploy": "node ./scripts/deploy.js",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "mobile": "webpack-dev-server --inline=false --host=0.0.0.0"
   },
   "keywords": [],
   "author": "Playbuzz",
@@ -44,6 +45,7 @@
     "winston": "^2.4.2"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "es6-object-assign": "^1.1.0",
     "pb-client-modules": "git+ssh://git@github.com/playbuzz/pb-client-modules.git#master",

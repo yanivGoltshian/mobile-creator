@@ -121,7 +121,6 @@ module.exports = function webpackConfig(env = {}) {
                 }),
                 new webpack.ProvidePlugin({
                     Promise: 'promise-polyfill',
-                    fetch: 'unfetch',
                 }),
                 ifLocal(new HtmlWebpackPlugin({
                     template: './demo/demo-index.ejs',
@@ -149,6 +148,7 @@ module.exports = function webpackConfig(env = {}) {
             contentBase: './',
             historyApiFallback: true,
             open: true,
+            // inline: false,
             openPage: '',
             https: {
                 cert: fs.readFileSync('./node_modules/pb-node-modules/cert/playbuzz-wildcard.crt'),
