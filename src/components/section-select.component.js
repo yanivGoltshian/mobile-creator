@@ -17,7 +17,16 @@ export default class SectionSelect extends Component {
         super(props);
         this.state = {
             hideSelection: true,
-            icons: ['image', 'format-convo-md', 'format-trivia-md', 'format-personality-quiz-md', 'format-abstract-md', 'format-list-md', 'format-shorts-md', 'format-flip-cards-sm']
+            icons: [
+                'image',
+                'format-convo-md',
+                'format-trivia-md',
+                'format-personality-quiz-md',
+                'format-abstract-md',
+                'format-list-md',
+                'format-shorts-md',
+                'format-flip-cards-sm',
+            ]
         };
         this.openSelection = this.openSelection.bind(this);
         this.selectSelection = this.selectSelection.bind(this);
