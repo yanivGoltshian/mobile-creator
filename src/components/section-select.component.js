@@ -17,7 +17,16 @@ export default class SectionSelect extends Component {
         super(props);
         this.state = {
             hideSelection: true,
-            icons: ['image','format-convo-md','format-trivia-md','format-personality-quiz-md','format-abstract-md','format-list-md','format-shorts-md','format-flip-cards-sm']
+            icons: [
+                'image',
+                'format-convo-md',
+                'format-trivia-md',
+                'format-personality-quiz-md',
+                'format-abstract-md',
+                'format-list-md',
+                'format-shorts-md',
+                'format-flip-cards-sm',
+            ]
         };
         this.openSelection = this.openSelection.bind(this);
         this.selectSelection = this.selectSelection.bind(this);
@@ -26,8 +35,8 @@ export default class SectionSelect extends Component {
 
     openSelection() {
         this.setState({
-                hideSelection: !this.state.hideSelection
-            }
+            hideSelection: !this.state.hideSelection
+        }
         );
     }
 
@@ -43,10 +52,10 @@ export default class SectionSelect extends Component {
             particals.push(
                 <button key={index}
                     type="button"
-                        className='section-btn'
-                        onClick={this.selectSelection}>
+                    className='section-btn'
+                    onClick={this.selectSelection}>
                     <svg className='section-icon'>
-                        <use xlinkHref={'#pb-icon-'+icon}/>
+                        <use xlinkHref={'#pb-icon-' + icon} />
                     </svg>
                 </button>)
         });
@@ -56,7 +65,7 @@ export default class SectionSelect extends Component {
     render() {
         return (
             <div className="add-section-buttons-container">
-                <div className={this.state.hideSelection ? 'buttons-container hide-container' :'buttons-container'}>
+                <div className={this.state.hideSelection ? 'buttons-container hide-container' : 'buttons-container'}>
                     {this.readIcon()}
                 </div>
                 <Button className="plus-btn" type="fab" onClick={this.openSelection}>
