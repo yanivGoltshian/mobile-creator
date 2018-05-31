@@ -4,3 +4,23 @@
   width: 100%;
   background: url(https://img.playbuzz.com/image/upload/c_crop/v1527765711/e3bglyqrdw8iz5cjasiu.gif) center / cover;
 }
+
+.text1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 57px;
+    text-align: left;
+    padding: 34px;
+}
+
+.input {
+    position: absolute;
+    bottom: 60px;
+    left: 40%;
+}
+
+.create-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 40%;
+}
