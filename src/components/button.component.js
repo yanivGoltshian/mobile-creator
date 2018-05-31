@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import './intro.style.css';
 
 export default class Button extends Component {
     constructor(props) {

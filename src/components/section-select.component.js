@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './intro.style.css';
 import pubsub from 'pubsub-js';
 import Button from './button.component';
 
