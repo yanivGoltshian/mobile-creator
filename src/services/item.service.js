@@ -9,6 +9,10 @@ const ItemService = {
         this.urls = urlArray;
     },
 
+    setStoryTitle(title) {
+        this.storyTitle = title;
+    },
+
     getItemJson() {
         return {
             "id": generateGuid() || "0a9ee147-da14-46ff-bb97-c0e598029f2d",

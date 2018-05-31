@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ItemService from "../services/item.service";
 
 export default class Input extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ export default class Input extends Component {
         const value = evt.target.value;
         const { onChange } = this.props;
         this.setState({ value });
+        ItemService.setStoryTitle(value);
         onChange && onChange(value);
     }
 

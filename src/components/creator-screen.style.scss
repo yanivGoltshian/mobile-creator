@@ -7,6 +7,18 @@
   width: 100%;
   background: rgb(200, 200, 200);
 
+  .story-title {
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: 700;
+    height: 48px;
+    margin-bottom: 15px;
+    border: 0;
+    padding: 16px;
+    color: #000;
+    background-color: #fff;
+  }
+
   .image {
     object-fit: cover;
     width: 100%;

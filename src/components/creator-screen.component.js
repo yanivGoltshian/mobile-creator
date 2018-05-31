@@ -43,7 +43,7 @@ export default class CreatorScreen extends Component {
         return (
             <div className="creator-screen">
                 <Navbar onSave={this.onSave} onPublish={this.onPublish} />
-
+                <div className='story-title'>{ItemService.storyTitle}</div>
                 {this.state.uploading && <div id="p2" className="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>}
 
                 <div className="preview">
