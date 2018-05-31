@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Intro.scss';
+import './intro.style.css';
 
 import Button from './button.component';
 import Input from './input.component';
@@ -7,7 +7,7 @@ import Input from './input.component';
 export default class Intro extends Component {
     render() {
         return (
-            <div className="Intro">
+            <div className="intro">
                 <Input placeholder="Title" inputId="story-title"/>
                 <Button>Create</Button>
             </div>
