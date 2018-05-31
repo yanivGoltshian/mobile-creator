@@ -44,6 +44,7 @@
     "winston": "^2.4.2"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "es6-object-assign": "^1.1.0",
     "pb-client-modules": "git+ssh://git@github.com/playbuzz/pb-client-modules.git#master",
