@@ -6,6 +6,12 @@ export default class Button extends Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.onClick = this.onClick.bind(this);
+    }
+
+    onClick() {
+        const { onClick } = this.props;
+        onClick && onClick();
     }
 
     render() {
@@ -24,10 +30,8 @@ export default class Button extends Component {
             );
         }
 
-        const { onClick } = this.props.onClick;
-
         return (
-            <button className={cn(btnClass)} onClick={onClick}>
+            <button className={cn(btnClass)} onClick={this.onClick}>
                 {this.props.children}
             </button>
         );
