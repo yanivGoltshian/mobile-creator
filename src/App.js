@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import pubsub from 'pubsub-js';
-import Button from './components/button.component';
-import Input from './components/input.component';
+import Intro from './components/intro.component';
 
 const screens = {
   intro: Intro,
