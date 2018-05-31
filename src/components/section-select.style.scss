@@ -1,0 +1,37 @@
+.add-section-buttons-container {
+  .plus-btn {
+    border: 1px solid #aaa;
+    background-color: #CA81FF !important;
+    bottom: 25px;
+    position: absolute;
+    left: 43%;
+  }
+
+  .hide-container {
+    display: none !important;
+  }
+
+  .buttons-container {
+    border: 1px dashed #aaa;
+    bottom: 90px;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 172px;
+    margin-left: 27%;
+    box-shadow: 5px 5px 5px 5px #888888;
+
+    .section-btn {
+      background-color: white;
+      border: 0;
+      padding: 6px;
+
+      .section-icon {
+        width: 31px;
+        height: 30px;
+        fill: #CA81FF;
+      }
+    }
+  }
+}
+
