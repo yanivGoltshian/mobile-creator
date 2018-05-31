@@ -8,7 +8,7 @@ export default class Button extends Component {
 
     render() {
         return (
-            <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" {...this.props}>
                 {this.props.children}
             </button>
         );

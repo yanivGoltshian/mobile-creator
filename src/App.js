@@ -3,10 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import pubsub from 'pubsub-js';
 import Intro from './components/intro.component';
+import CreatorScreen from './components/creator-screen.component';
 
 const screens = {
   intro: Intro,
-  // creator: Creator,
+  creator: CreatorScreen,
   // publish: Publish,
 };
 
@@ -18,7 +19,7 @@ class App extends Component {
       currentScreen: 'intro'
     };
 
-    pubsub.subscribe('navigate', ({ screen }) => {
+    pubsub.subscribe('navigate', (event, { screen }) => {
       this.setState({ currentScreen: screen });
     });
   }
