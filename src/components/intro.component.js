@@ -23,6 +23,7 @@ export default class Intro extends Component {
                 <div className="text2" >In The Palm of Your Hand</div>
                 <Input placeholder="Story title" inputId="story-title"/>
                 <Button onClick={this.create} className="create-btn">Create</Button>
+                <img className="logo" src="https://img.playbuzz.com/image/upload/c_crop/v1527775229/hngdn8hywxcvnrhi9xix.png"></img>
             </div>
         );
     }

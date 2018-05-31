@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from './button.component';
 import './creator-screen.style.css';
+import SectionSelect from "./section-select.component";
 
 export default class CreatorScreen extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ export default class CreatorScreen extends Component {
                 <Button type="fab">
                     <i className="material-icons">add</i>
                 </Button>
+                <SectionSelect></SectionSelect>
             </div>
         );
     }
