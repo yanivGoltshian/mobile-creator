@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './intro.style.css';
 
 export default class Input extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ export default class Input extends Component {
         const { placeholder, inputId } = this.props;
 
         return (
-            <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input1">
                 <input className="mdl-textfield__input" type="text" id="{inputId}" value={this.state.value} onChange={this.onChange} />
                 <label className="mdl-textfield__label" htmlFor="{inputId}">{placeholder}</label>
             </div>

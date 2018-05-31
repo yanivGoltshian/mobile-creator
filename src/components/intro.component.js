@@ -20,10 +20,9 @@ export default class Intro extends Component {
         return (
             <div className="intro">
                 <div className="text1" >Your Story</div>
-                <div className="text1" >In your</div>
-                <div className="text1">HAND</div>
-                <Input className="input" placeholder="Title" inputId="story-title"/>
-                <Button className="create-btn" onClick={this.create}>Create</Button>
+                <div className="text2" >In The Palm of Your Hand</div>
+                <Input placeholder="Story title" inputId="story-title"/>
+                <Button onClick={this.create}>Create</Button>
             </div>
         );
     }

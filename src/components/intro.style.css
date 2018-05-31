@@ -9,18 +9,44 @@
     color: #fff;
     font-weight: 700;
     font-size: 57px;
-    text-align: left;
-    padding: 34px;
+    text-align: center;
+    padding-bottom: 34px;
+    padding-top: 69px;
 }
 
-.input {
+.text2 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 27px;
+    text-align: center;
+    padding: 10px;
+}
+
+.input1 {
     position: absolute;
-    bottom: 60px;
-    left: 40%;
+    top: 200px;
+    left: 20px;
+}
+
+.mdl-textfield__label {
+    color: #fff;
+}
+
+.mdl-textfield__input {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+    color: #fff;
 }
 
 .create-btn {
     position: absolute;
-    bottom: 40px;
-    left: 40%;
+    top: 281px;
+    left: 35%;
+}
+
+.mdl-button--accent.mdl-button--accent.mdl-button--raised, .mdl-button--accent.mdl-button--accent.mdl-button--fab {
+    background-color: #bc49ff;
 }
