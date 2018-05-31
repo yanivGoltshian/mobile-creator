@@ -1,15 +1,24 @@
 import React from 'react';
 import './navbar.style.scss';
+import pubsub from 'pubsub-js';
 
 export default class Navbar extends React.Component {
     constructor(props) {
         super(props);
+        this.onClick = this.onClick.bind(this);
     }
+
+    onClick() {
+        pubsub.publish('navigate', {
+            screen: 'intro',
+        });
+    }
+
 
     render() {
         return (
             <div className="creator-header">
-                <div className="header-logo" />
+                <div className="header-logo" onClick={this.onClick}/>
                 <div className="header-icons">
                     <ul className="header-icons-list">
                         <li>

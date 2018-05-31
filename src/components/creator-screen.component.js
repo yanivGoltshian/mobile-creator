@@ -46,7 +46,10 @@ export default class CreatorScreen extends Component {
     }
 
     onPublish() {
-
+        const itemToSave = ItemService.getItemJson();
+        CreatorService.save(itemToSave).then((response) => {
+            console.log('response', response);
+        });
     }
 
     renderSection(section) {
