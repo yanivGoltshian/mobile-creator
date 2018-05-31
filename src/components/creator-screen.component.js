@@ -58,7 +58,10 @@ export default class CreatorScreen extends Component {
         const Section = sectionsMap[section.type];
 
         return (
-            <Section className="section" key={section.id} section={section} />
+            <div>
+                <img className="img-list" src={'https://img.playbuzz.com/image/upload/c_crop/v1527807860/jdfkjo2qq8jc7psmenma.png'}></img>
+                <Section className="section" key={section.id} section={section} />
+            </div>
         );
     }
 

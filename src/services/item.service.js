@@ -108,7 +108,7 @@ const ItemService = {
         let sections = [];
         const array = this.urls || [];
         array.forEach((link) => {
-            sections.push(this.getMediaSection(link));
+            sections.push(this.getListSection(link));
         });
         return sections;
     },
@@ -246,6 +246,55 @@ const ItemService = {
             }
         ]
     },
+
+    getListSection(link) {
+        return {
+            "title": {
+                "ops": [
+                    {
+                        "insert": "\n"
+                    }
+                ]
+            },
+            "list": {
+                "type": "none",
+                "backgroundColor": "#009CFF",
+                "color": "#fff",
+                "enableVoting": true,
+                "enableDownVoting": false
+            },
+            "media": {
+                "mediaType": "image",
+                "originalImageUrl": link || "https://img.playbuzz.com/image/upload/v1527794677/sh6d6sgfbafvepcbnddl.jpg",
+                "url": link || "https://img.playbuzz.com/image/upload/c_crop/v1527794677/sh6d6sgfbafvepcbnddl.jpg",
+                "canvasObjects": {},
+                "width": 1500,
+                "height": 844,
+                "isAnimated": false,
+                "selected": {
+                    "h": 844,
+                    "w": 1500,
+                    "x": 0,
+                    "y": 0,
+                    "x2": 1500,
+                    "y2": 844
+                },
+                "fileSize": 197130
+            },
+            "id": generateGuid() || "6e76dfdd-068e-4f5a-b055-99e8c1b6647b",
+            "type": "mediaSection",
+            "settings": {
+                "autoPlay": true
+            },
+            "description": {
+                "ops": [
+                    {
+                        "insert": "\n"
+                    }
+                ]
+            }
+        }
+    }
 }
 
 export default ItemService;
