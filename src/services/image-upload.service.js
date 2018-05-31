@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export function uploadImage() {
+export function getMedia() {
     return new Promise((resolve, reject) => {
         const input = document.createElement('input');
         input.setAttribute('type', 'file');
@@ -21,4 +21,10 @@ export function uploadToCloudinary(file) {
 
     return axios.post('https://api.cloudinary.com/v1_1/playbuzz-cld/upload', formData)
         .then(response => response.data.secure_url);
+}
+
+export function uploadAssets() {
+    getMedia().then(mediaFiles => {
+        return Promise.all(mediaFiles.map(file => uploadToCloudinary(file)))
+    });
 }
