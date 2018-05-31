@@ -94,16 +94,16 @@ module.exports = function webpackConfig(env = {}) {
         optimization: {
             noEmitOnErrors: true,
             minimizer: removeEmpty([
-                ifProd(new UglifyJsPlugin({
-                    cache: true,
-                    parallel: true,
-                    uglifyOptions: {
-                        compress: false,
-                        ecma: 6,
-                        mangle: true,
-                    },
-                    sourceMap: true,
-                })),
+                // ifProd(new UglifyJsPlugin({
+                //     cache: true,
+                //     parallel: true,
+                //     uglifyOptions: {
+                //         compress: false,
+                //         ecma: 6,
+                //         mangle: true,
+                //     },
+                //     sourceMap: true,
+                // })),
             ]),
         },
         plugins: removeEmpty([
