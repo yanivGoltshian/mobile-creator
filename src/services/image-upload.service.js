@@ -28,3 +28,7 @@ export function uploadAssets() {
         return Promise.all(mediaFiles.map(file => uploadToCloudinary(file)))
     });
 }
+
+export function getLinksArray() {
+    return ['https://img.playbuzz.com/image/upload/c_crop/v1527765711/e3bglyqrdw8iz5cjasiu.gif'];
+}

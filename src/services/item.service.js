@@ -1,3 +1,5 @@
+import {getLinksArray} from './image-upload.service'
+
 export default class ItemService {
     constructor() {
 
@@ -62,58 +64,7 @@ export default class ItemService {
             },
             "formatId": "story",
             "sections": [
-                [
-                    {
-                        "title": {
-                            "ops": [
-                                {
-                                    "insert": "\n"
-                                }
-                            ]
-                        },
-                        "list": {
-                            "type": "none",
-                            "backgroundColor": "#009CFF",
-                            "color": "#fff",
-                            "enableVoting": true,
-                            "enableDownVoting": false
-                        },
-                        "media": {
-                            "mediaType": "image",
-                            "originalImageUrl": "https://img.playbuzz.com/image/upload/v1527790190/fai1zodaea9cohsrp0lp.jpg",
-                            "url": "https://img.playbuzz.com/image/upload/c_crop/v1527790190/fai1zodaea9cohsrp0lp.jpg",
-                            "canvasObjects": {},
-                            "width": 1500,
-                            "height": 1001,
-                            "isAnimated": false,
-                            "selected": {
-                                "h": 1001,
-                                "w": 1500,
-                                "x": 0,
-                                "y": 0,
-                                "x2": 1500,
-                                "y2": 1001
-                            },
-                            "fileSize": 347449,
-                            "credits": "Getty Images",
-                            "gettyAssetId": "908333824",
-                            "gettyAccount": "Playbuzz"
-                        },
-                        "id": "4ce622cb-c5f9-4b7a-8445-642fc75d42cc",
-                        "type": "mediaSection",
-                        "$$hashKey": "object:551",
-                        "settings": {
-                            "autoPlay": true
-                        },
-                        "description": {
-                            "ops": [
-                                {
-                                    "insert": "\n"
-                                }
-                            ]
-                        }
-                    }
-                ]
+                this.getSections()
             ],
             "cover": {
                 "mediaType": "image",
@@ -143,4 +94,65 @@ export default class ItemService {
         };
     }
 
+    getSections(){
+        let sections = [];
+        const array = getLinksArray();
+        array.forEach( (link) => {
+            sections.push(this.getMediaSection(link));
+        });
+        return sections;
+    }
+
+    getMediaSection(link) {
+        return {
+            "title": {
+            "ops": [
+                {
+                    "insert": "\n"
+                }
+            ]
+        },
+            "list": {
+            "type": "none",
+                "backgroundColor": "#009CFF",
+                "color": "#fff",
+                "enableVoting": true,
+                "enableDownVoting": false
+        },
+            "media": {
+            "mediaType": "image",
+                "originalImageUrl": link,
+                "url": link,
+                "canvasObjects": {},
+            "width": 1500,
+                "height": 1001,
+                "isAnimated": false,
+                "selected": {
+                "h": 1001,
+                    "w": 1500,
+                    "x": 0,
+                    "y": 0,
+                    "x2": 1500,
+                    "y2": 1001
+            },
+            "fileSize": 347449,
+                "credits": "Getty Images",
+                "gettyAssetId": "908333824",
+                "gettyAccount": "Playbuzz"
+        },
+            "id": "4ce622cb-c5f9-4b7a-8445-642fc75d42cc",
+            "type": "mediaSection",
+            "$$hashKey": "object:551",
+            "settings": {
+            "autoPlay": true
+        },
+            "description": {
+            "ops": [
+                {
+                    "insert": "\n"
+                }
+            ]
+        }
+        }
+    }
 }
