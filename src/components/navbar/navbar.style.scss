@@ -1,6 +1,6 @@
 .creator-header {
-  background-color: #fff;
-  color: #222222;
+  background-color: #222222;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,9 +8,59 @@
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14);
   padding: 3px;
 
+  .pb-btn-blue {
+    background-color: #009cff;
+    border-color: #009cff;
+    padding: 0px 12px;
+  }
+
+  .pb-btn-green {
+    background-color: #39b54a;
+    border-color: #39b54a;
+  }
+   .nav-brn {
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+
+  .btn {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .button-text {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.42857143;
+    text-align: center;
+  }
+
   .header-title {
     font-size: 18px;
-    padding-left: 10px;
+    padding-left: 33px;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: 26px 36px;
+    background-image: url("https://img.playbuzz.com/image/upload/c_crop/v1527798364/ijrfira2w7epzszsrhex.png");
   }
 
   .header-icons {
