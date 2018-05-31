@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
+import './intro.style.css';
 
 export default class Button extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ export default class Button extends Component {
     render() {
         const { type } = this.props;
 
-        const btnClass = ["mdl-button mdl-js-button mdl-js-ripple-effect"];
+        const btnClass = ["mdl-button mdl-js-button mdl-js-ripple-effect", this.props.className];
 
         if (type === 'fab') {
             btnClass.push(
@@ -23,8 +24,10 @@ export default class Button extends Component {
             );
         }
 
+        const { onClick } = this.props.onClick;
+
         return (
-            <button className={cn(btnClass)} {...this.props}>
+            <button className={cn(btnClass)} onClick={onClick}>
                 {this.props.children}
             </button>
         );

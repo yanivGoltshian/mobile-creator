@@ -19,8 +19,10 @@ export default class Intro extends Component {
     render() {
         return (
             <div className="intro">
-                <Input placeholder="Title" inputId="story-title"/>
-                <Button onClick={this.create}>Create</Button>
+                <div className="text1" >Your Story</div>
+                <div className="text2" >In The Palm of Your Hand</div>
+                <Input placeholder="Story title" inputId="story-title"/>
+                <Button onClick={this.create} className="create-btn">Create</Button>
             </div>
         );
     }
