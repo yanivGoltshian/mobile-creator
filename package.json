@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf build",
     "build": "webpack --env.NODE_ENV=production",
-    "deploy": "node ./scripts/deploy.js",
+    "deploy": "npm run build && node ./scripts/deploy.js",
     "start": "webpack-dev-server",
     "mobile": "webpack-dev-server --inline=false --host=0.0.0.0"
   },
