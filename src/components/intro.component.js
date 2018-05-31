@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './intro.component.scss';
+import './intro.style.css';
 
 import Button from './button.component';
 import Input from './input.component';
