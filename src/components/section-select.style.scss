@@ -16,7 +16,7 @@
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    width: 185px;
+    width: 180px;
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 0 5px 1px #8888;
@@ -27,6 +27,7 @@
       background-color: white;
       border: 0;
       padding: 6px;
+      margin: 1px;
 
       &:hover, &:active {
         background-color: #e6e6e6;
