@@ -24,7 +24,7 @@ export function uploadToCloudinary(file) {
 }
 
 export function uploadAssets() {
-    getMedia().then(mediaFiles => {
-        return Promise.all(mediaFiles.map(file => uploadToCloudinary(file)))
+    return getMedia().then(mediaFiles => {
+        return Promise.all([...mediaFiles].map(file => uploadToCloudinary(file)))
     });
 }

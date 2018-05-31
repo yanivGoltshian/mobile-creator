@@ -16,7 +16,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentScreen: 'intro'
+      currentScreen: 'creator'
     };
 
     pubsub.subscribe('navigate', (event, { screen }) => {
