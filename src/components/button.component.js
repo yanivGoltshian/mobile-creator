@@ -22,6 +22,7 @@ export default class Button extends Component {
         if (type === 'fab') {
             btnClass.push(
                 'mdl-button--fab',
+                'mdl-button--colored',
             );
         } else {
             btnClass.push(
