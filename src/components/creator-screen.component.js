@@ -32,7 +32,7 @@ export default class CreatorScreen extends Component {
     }
 
     onSave() {
-
+        const itemToSave = ItemService.getItemJson();
     }
 
     onPublish() {
