@@ -1,4 +1,4 @@
-import {getLinksArray} from './image-upload.service'
+import { getLinksArray } from './image-upload.service'
 import generateGuid from 'pb-client-modules/src/guid-generator';
 
 const ItemService = {
@@ -71,9 +71,7 @@ const ItemService = {
                 "view": "public"
             },
             "formatId": "story",
-            "sections": [
-                this.getSections()
-            ],
+            "sections": this.getSections(),
             "cover": {
                 "mediaType": "image",
                 "originalImageUrl": "https://img.playbuzz.com/image/upload/v1527790190/fai1zodaea9cohsrp0lp.jpg",
@@ -96,20 +94,20 @@ const ItemService = {
                 "gettyAccount": "Playbuzz"
             },
             "readingTime": 4,
-            "title": this.getTitle() || "S     tory (2018-05-31 21:10:07)",
+            "title": this.getTitle() || "Sample Story",
             "detectedLocale": "en-US",
             "channelId": "2da466c9-d201-45fc-a18d-5687aac968c5"
         };
     },
 
-    getTitle(){
+    getTitle() {
         return this.storyTitle || 'my story';
     },
 
-    getSections(){
+    getSections() {
         let sections = [];
         const array = this.urls || [];
-        array.forEach( (link) => {
+        array.forEach((link) => {
             sections.push(this.getMediaSection(link));
         });
         return sections;
@@ -118,53 +116,53 @@ const ItemService = {
     getMediaSection(link) {
         return [{
             "title": {
-            "ops": [
-                {
-                    "insert": "\n"
-                }
-            ]
-        },
+                "ops": [
+                    {
+                        "insert": "\n"
+                    }
+                ]
+            },
             "list": {
-            "type": "none",
+                "type": "none",
                 "backgroundColor": "#009CFF",
                 "color": "#fff",
                 "enableVoting": true,
                 "enableDownVoting": false
-        },
+            },
             "media": {
-            "mediaType": "image",
+                "mediaType": "image",
                 "originalImageUrl": link,
                 "url": link,
                 "canvasObjects": {},
-            "width": 1500,
+                "width": 1500,
                 "height": 1001,
                 "isAnimated": false,
                 "selected": {
-                "h": 1001,
+                    "h": 1001,
                     "w": 1500,
                     "x": 0,
                     "y": 0,
                     "x2": 1500,
                     "y2": 1001
-            },
-            "fileSize": 347449,
+                },
+                "fileSize": 347449,
                 "credits": "Getty Images",
                 "gettyAssetId": "908333824",
                 "gettyAccount": "Playbuzz"
-        },
+            },
             "id": generateGuid() || "4ce622cb-c5f9-4b7a-8445-642fc75d42cc",
             "type": "mediaSection",
             "$$hashKey": "object:551",
             "settings": {
-            "autoPlay": true
-        },
+                "autoPlay": true
+            },
             "description": {
-            "ops": [
-                {
-                    "insert": "\n"
-                }
-            ]
-        }
+                "ops": [
+                    {
+                        "insert": "\n"
+                    }
+                ]
+            }
         }]
     },
 

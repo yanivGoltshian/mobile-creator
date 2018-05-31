@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import ItemService from '../services/item.service';
+import CreatorService from '../services/creator.service';
 import './creator-screen.style.scss';
 import SectionSelect from "./section-select.component";
 import pubsub from 'pubsub-js';
 import Navbar from "./navbar/navbar.component";
-import ItemService from './../services/item.service';
 import ImageSection from './image-section';
 
 const sectionsMap = {
@@ -39,6 +40,9 @@ export default class CreatorScreen extends Component {
 
     onSave() {
         const itemToSave = ItemService.getItemJson();
+        CreatorService.save(itemToSave).then((response) => {
+            console.log('response', response);
+        });
     }
 
     onPublish() {
