@@ -6,8 +6,8 @@ import Intro from './components/intro.component';
 
 const screens = {
   intro: Intro,
-  creator: Creator,
-  publish: Publish,
+  // creator: Creator,
+  // publish: Publish,
 };
 
 class App extends Component {
