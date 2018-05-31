@@ -9,7 +9,7 @@ export default class Navbar extends React.Component {
     render() {
         return (
             <div className="creator-header">
-                <span className="header-title">Story Create</span>
+                <span className="header-title">Story Creator</span>
                 <div className="header-icons">
                     <ul className="header-icons-list">
                         <li>

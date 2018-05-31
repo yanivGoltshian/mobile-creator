@@ -3,28 +3,34 @@ import './creator-screen.style.scss';
 import SectionSelect from "./section-select.component";
 import pubsub from 'pubsub-js';
 import Navbar from "./navbar/navbar.component";
-import ItemService from './../services/item.service'
+import ItemService from './../services/item.service';
+import ImageSection from './image-section';
+
+const sectionsMap = {
+    image: ImageSection,
+};
 
 export default class CreatorScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            images: [],
+            sections: [
+            ],
             uploading: false,
         };
 
-        pubsub.subscribe('media_uploading', () => {
+        pubsub.subscribe('section_media_uploading', () => {
             this.setState({
                 uploading: true,
             });
         });
 
-        pubsub.subscribe('media_uploaded', (event, { urls }) => {
+        pubsub.subscribe('sections_added', (event, { sections }) => {
             this.setState(prevState => ({
-                images: [...prevState.images, ...urls],
+                sections: [...prevState.sections, ...sections],
                 uploading: false,
             }));
-            ItemService.setUrls(urls);
+            ItemService.setUrls(sections.map(section => section.url));
         });
 
         this.onSave = this.onSave.bind(this);
@@ -39,15 +45,23 @@ export default class CreatorScreen extends Component {
 
     }
 
+    renderSection(section) {
+        const Section = sectionsMap[section.type];
+
+        return (
+            <Section className="section" key={section.id} section={section} />
+        );
+    }
+
     render() {
         return (
             <div className="creator-screen">
                 <Navbar onSave={this.onSave} onPublish={this.onPublish} />
-                <div className='story-title'>{ItemService.storyTitle}</div>
                 {this.state.uploading && <div id="p2" className="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>}
 
                 <div className="preview">
-                    {this.state.images.map(url => <img className="image" key={url} src={url} />)}
+                    <div className='story-title'>{ItemService.storyTitle}</div>
+                    {this.state.sections.map(section => this.renderSection(section))}
                 </div>
 
                 <SectionSelect></SectionSelect>

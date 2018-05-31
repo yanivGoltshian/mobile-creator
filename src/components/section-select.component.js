@@ -12,6 +12,8 @@ import 'pb-svg-icons/svg/formats/format-convo-md.svg';
 import 'pb-svg-icons/svg/core/image.svg';
 import {uploadAssets} from '../services/image-upload.service';
 
+let idCounter = 1;
+
 export default class SectionSelect extends Component {
     constructor(props) {
         super(props);
@@ -45,10 +47,15 @@ export default class SectionSelect extends Component {
             hideSelection: true
         });
 
-        pubsub.publish('media_uploading');
+        pubsub.publish('section_media_uploading');
 
         uploadAssets().then(urls => {
-            pubsub.publish('media_uploaded', { urls });
+            const sections = urls.map(url => ({
+                type: 'image',
+                id: idCounter++,
+                url,
+            }));
+            pubsub.publish('sections_added', { sections });
         });
     }
 
