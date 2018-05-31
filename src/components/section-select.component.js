@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Button from './button.component';
-import cn from 'classnames';
 import pubsub from 'pubsub-js';
 import './section-select.style.scss';
 import 'pb-svg-icons/svg/formats/format-flip-cards-sm.svg';
@@ -12,7 +11,6 @@ import 'pb-svg-icons/svg/formats/format-trivia-md.svg';
 import 'pb-svg-icons/svg/formats/format-convo-md.svg';
 import 'pb-svg-icons/svg/core/image.svg';
 import {uploadAssets} from '../services/image-upload.service';
-
 
 export default class SectionSelect extends Component {
     constructor(props) {

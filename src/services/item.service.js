@@ -1,12 +1,15 @@
 import {getLinksArray} from './image-upload.service'
 import generateGuid from 'pb-client-modules/src/guid-generator';
 
-export default class ItemService {
-    constructor() {
+const ItemService = {
+    urls: [],
+    storyTitle: 'my story',
 
-    }
+    setUrls(urlArray) {
+        this.urls = urlArray;
+    },
 
-    get() {
+    getItemJson() {
         return {
             "id": generateGuid() || "0a9ee147-da14-46ff-bb97-c0e598029f2d",
             "tags": [],
@@ -93,20 +96,20 @@ export default class ItemService {
             "detectedLocale": "en-US",
             "channelId": "2da466c9-d201-45fc-a18d-5687aac968c5"
         };
-    }
+    },
 
     getTitle(){
-        return 'my story';
-    }
+        return this.storyTitle || 'my story';
+    },
 
     getSections(){
         let sections = [];
-        const array = getLinksArray();
+        const array = this.urls || [];
         array.forEach( (link) => {
             sections.push(this.getMediaSection(link));
         });
         return sections;
-    }
+    },
 
     getMediaSection(link) {
         return [{
@@ -159,7 +162,7 @@ export default class ItemService {
             ]
         }
         }]
-    }
+    },
 
     getTextSection(text) {
         return [
@@ -190,7 +193,7 @@ export default class ItemService {
                 "$$hashKey": "object:1162"
             }
         ]
-    }
+    },
 
     getVideoSection(link) {
         return [
@@ -240,5 +243,7 @@ export default class ItemService {
                 }
             }
         ]
-    }
+    },
 }
+
+export default ItemService;

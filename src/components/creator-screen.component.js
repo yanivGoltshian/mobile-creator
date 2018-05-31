@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Button from './button.component';
 import './creator-screen.style.scss';
 import SectionSelect from "./section-select.component";
 import pubsub from 'pubsub-js';
 import Navbar from "./navbar/navbar.component";
+import ItemService from './../services/item.service'
 
 export default class CreatorScreen extends Component {
     constructor(props) {
@@ -24,6 +24,7 @@ export default class CreatorScreen extends Component {
                 images: [...prevState.images, ...urls],
                 uploading: false,
             }));
+            ItemService.setUrls(urls);
         });
 
         this.onSave = this.onSave.bind(this);
