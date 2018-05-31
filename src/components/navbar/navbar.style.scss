@@ -4,9 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  line-height: 35px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14);
-  padding: 3px;
+  height: 45px;
+  min-height: 45px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 
   .pb-btn-blue {
     background-color: #009cff;
@@ -18,7 +18,8 @@
     background-color: #39b54a;
     border-color: #39b54a;
   }
-   .nav-brn {
+
+  .nav-brn {
     color: #fff;
     font-weight: 700;
     display: inline-block;
@@ -54,13 +55,13 @@
     text-align: center;
   }
 
-  .header-title {
-    font-size: 18px;
-    padding-left: 33px;
-    color: white;
+  .header-logo {
+    background-image: url('https://s3.amazonaws.com/pb-format-story-dev/mobile-creator/pblogo.png');
     background-repeat: no-repeat;
-    background-size: 26px 36px;
-    background-image: url("https://img.playbuzz.com/image/upload/c_crop/v1527798364/ijrfira2w7epzszsrhex.png");
+    height: 33px;
+    margin: 6px;
+    width: 135px;
+    background-size: contain;
   }
 
   .header-icons {
@@ -78,7 +79,10 @@
       .btn {
         color: darkgrey;
         padding: 0 5px;
-        min-width: auto;
+        min-width: 60px;
+        line-height: 2.428571;
+        font-size: 13px;
+        border-radius: 5px;
       }
     }
   }

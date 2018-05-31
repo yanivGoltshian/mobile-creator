@@ -12,19 +12,25 @@
   }
 
   .buttons-container {
-    border: 1px dashed #aaa;
     bottom: 90px;
     position: absolute;
     display: flex;
     flex-wrap: wrap;
     width: 172px;
-    margin-left: 27%;
-    box-shadow: 5px 5px 5px 5px #888888;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px 1px #8888;
+    border-radius: 5px;
+    overflow: hidden;
 
     .section-btn {
       background-color: white;
       border: 0;
       padding: 6px;
+
+      &:hover, &:active {
+        background-color: #e6e6e6;
+      }
 
       .section-icon {
         width: 31px;
