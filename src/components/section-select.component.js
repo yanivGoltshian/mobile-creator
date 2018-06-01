@@ -10,7 +10,7 @@ import 'pb-svg-icons/svg/formats/format-personality-quiz-md.svg';
 import 'pb-svg-icons/svg/formats/format-trivia-md.svg';
 import 'pb-svg-icons/svg/formats/format-convo-md.svg';
 import 'pb-svg-icons/svg/core/image.svg';
-import {uploadAssets} from '../services/image-upload.service';
+import { uploadAssets } from '../services/image-upload.service';
 
 let idCounter = 1;
 
@@ -32,7 +32,7 @@ export default class SectionSelect extends Component {
         };
         this.openSelection = this.openSelection.bind(this);
         this.selectSelection = this.selectSelection.bind(this);
-        this.readIcon = this.readIcon.bind(this);
+        this.renderSections = this.renderSections.bind(this);
     }
 
     openSelection() {
@@ -59,19 +59,20 @@ export default class SectionSelect extends Component {
         });
     }
 
-    readIcon() {
-        let particals = [];
-        this.state.icons.forEach((icon, index) => {
-            particals.push(
-                <button key={index}
-                    type="button"
-                    className='section-btn'
-                    onClick={this.selectSelection}>
-                    <svg className='section-icon'>
-                        <use xlinkHref={'#pb-icon-' + icon} />
-                    </svg>
-                </button>)
-        });
+    renderSections() {
+        const { icons } = this.state;
+
+        let particals = icons.map((icon) => (
+            <button key={icon}
+                type="button"
+                className='section-btn'
+                onClick={this.selectSelection}>
+                <svg className='section-icon'>
+                    <use xlinkHref={'#pb-icon-' + icon} />
+                </svg>
+            </button>
+        ));
+
         return particals;
     }
 
@@ -79,7 +80,7 @@ export default class SectionSelect extends Component {
         return (
             <div className="add-section-buttons-container">
                 <div className={this.state.hideSelection ? 'buttons-container hide-container' : 'buttons-container'}>
-                    {this.readIcon()}
+                    {this.renderSections()}
                 </div>
                 <Button className="plus-btn" type="fab" onClick={this.openSelection}>
                     <i className="material-icons">add</i>
