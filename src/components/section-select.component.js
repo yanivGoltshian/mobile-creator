@@ -38,8 +38,7 @@ export default class SectionSelect extends Component {
     openSelection() {
         this.setState({
             hideSelection: !this.state.hideSelection
-        }
-        );
+        });
     }
 
     selectSelection(e) {

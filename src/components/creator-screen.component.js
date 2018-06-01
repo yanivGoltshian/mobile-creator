@@ -14,28 +14,33 @@ const sectionsMap = {
 export default class CreatorScreen extends Component {
     constructor(props) {
         super(props);
+        this.subs = [];
         this.state = {
             sections: [
             ],
             uploading: false,
         };
 
-        pubsub.subscribe('section_media_uploading', () => {
+        this.subs.push(pubsub.subscribe('section_media_uploading', () => {
             this.setState({
                 uploading: true,
             });
-        });
+        }));
 
-        pubsub.subscribe('sections_added', (event, { sections }) => {
+        this.subs.push(pubsub.subscribe('sections_added', (event, { sections }) => {
             this.setState(prevState => ({
                 sections: [...prevState.sections, ...sections],
                 uploading: false,
             }));
             ItemService.setUrls(sections.map(section => section.url));
-        });
+        }));
 
         this.onSave = this.onSave.bind(this);
         this.onPublish = this.onPublish.bind(this);
+    }
+
+    componentWillUnmount() {
+        this.subs.forEach(sub => pubsub.unsubscribe(sub));
     }
 
     onSave() {
