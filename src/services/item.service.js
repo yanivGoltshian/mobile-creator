@@ -61,7 +61,7 @@ const ItemService = {
                 "view": "public"
             },
             "formatId": "story",
-            "sections": this.getSections(),
+            "sections": [this.getSections()],
             "cover": {
                 "mediaType": "image",
                 "originalImageUrl": "https://img.playbuzz.com/image/upload/v1485701643/rrptnddw80syrlipfm4r.jpg",
