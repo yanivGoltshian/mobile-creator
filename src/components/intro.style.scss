@@ -2,7 +2,8 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: url(https://img.playbuzz.com/image/upload/c_crop/v1527765711/e3bglyqrdw8iz5cjasiu.gif) center / cover;
+  min-height: 400px;
+  background: url(https://img.playbuzz.com/image/upload/c_crop/v1527765711/e3bglyqrdw8iz5cjasiu.gif) (center / cover);
 
   .text1 {
     color: #fff;
@@ -21,36 +22,39 @@
     padding: 10px;
   }
 
-  .input1 {
-    position: absolute;
-    bottom: 200px;
-    left: 20px;
-  }
+  .intro-form {
+    width: 100%;
+    margin-top: 10px;
 
-  .mdl-textfield__label {
-    color: #fff;
-  }
+    .input1 {
+      width: 80%;
+      margin: auto;
+    }
 
-  .mdl-textfield__input {
-    color: #fff;
-    border-bottom: 1px solid #fff;
-    outline: none;
-  }
+    .mdl-textfield__label {
+      color: #fff;
+    }
 
-  .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
-    color: #fff;
-  }
+    .mdl-textfield__input {
+      color: #fff;
+      border-bottom: 1px solid #fff;
+      outline: none;
+    }
 
-  .create-btn {
-    position: absolute;
-    width: 50%;
-    height: 45px;
-    bottom: 150px;
-    left: 23%;
-  }
+    .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+      color: #fff;
+    }
 
-  .mdl-button--accent.mdl-button--accent.mdl-button--raised, .mdl-button--accent.mdl-button--accent.mdl-button--fab {
-    background-color: #bc49ff;
+    .create-btn {
+      width: 50%;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    .mdl-button--accent.mdl-button--accent.mdl-button--raised,
+    .mdl-button--accent.mdl-button--accent.mdl-button--fab {
+      background-color: #bc49ff;
+    }
   }
 
   .logo {
