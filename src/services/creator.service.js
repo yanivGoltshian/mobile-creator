@@ -6,7 +6,8 @@ const CreatorService = {
             return axios({
                 method: 'POST',
                 url: 'https://stg-video-creator.playbuzz.com/no-login/create-mobile',
-                data: item
+                data: item,
+                withCredentials: true
             }).then(response => window.location.replace(response.data.url))
                 .catch((err) => console.error(err));
         });
