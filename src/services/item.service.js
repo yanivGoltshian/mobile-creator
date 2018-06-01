@@ -19,45 +19,35 @@ const ItemService = {
             "tags": [],
             "thumbnail": {
                 "mediaType": "image",
-                "originalImageUrl": "https://img.playbuzz.com/image/upload/v1527790190/fai1zodaea9cohsrp0lp.jpg",
-                "url": "https://img.playbuzz.com/image/upload/c_crop/ar_100:53,c_crop/c_mfit,w_640/ar_420:315,c_crop/c_fill,w_420/v1527790190/fai1zodaea9cohsrp0lp.jpg",
-                "canvasObjects": {},
-                "width": 1500,
-                "height": 1001,
+                "originalImageUrl": "https://img.playbuzz.com/image/upload/v1485701643/rrptnddw80syrlipfm4r.jpg",
+                "width": 1297,
+                "height": 688,
                 "isAnimated": false,
+                "url": "https://img.playbuzz.com/image/upload/c_crop,h_688,w_1297,x_15,y_0/ar_420:315,c_crop/c_fill,w_420/v1485701643/rrptnddw80syrlipfm4r.jpg",
                 "selected": {
-                    "h": 1001,
-                    "w": 1500,
-                    "x": 0,
+                    "x": 15,
                     "y": 0,
-                    "x2": 1500,
-                    "y2": 1001
-                },
-                "fileSize": 347449,
-                "credits": "Getty Images",
-                "gettyAssetId": "908333824",
-                "gettyAccount": "Playbuzz"
+                    "x2": 1312,
+                    "y2": 688,
+                    "w": 1297,
+                    "h": 688
+                }
             },
             "socialThumbnail": {
                 "mediaType": "image",
-                "originalImageUrl": "https://img.playbuzz.com/image/upload/v1527790190/fai1zodaea9cohsrp0lp.jpg",
-                "url": "https://img.playbuzz.com/image/upload/c_crop/ar_100:53,c_crop/c_mfit,w_640/ar_420:221,c_crop/c_fill,w_420/v1527790190/fai1zodaea9cohsrp0lp.jpg",
-                "canvasObjects": {},
-                "width": 1500,
-                "height": 1001,
+                "originalImageUrl": "https://img.playbuzz.com/image/upload/v1485701643/rrptnddw80syrlipfm4r.jpg",
+                "width": 1297,
+                "height": 688,
                 "isAnimated": false,
+                "url": "https://img.playbuzz.com/image/upload/c_crop,h_688,w_1297,x_15,y_0/ar_420:221,c_crop/c_fill,w_420/v1485701643/rrptnddw80syrlipfm4r.jpg",
                 "selected": {
-                    "h": 1001,
-                    "w": 1500,
-                    "x": 0,
+                    "x": 15,
                     "y": 0,
-                    "x2": 1500,
-                    "y2": 1001
-                },
-                "fileSize": 347449,
-                "credits": "Getty Images",
-                "gettyAssetId": "908333824",
-                "gettyAccount": "Playbuzz"
+                    "x2": 1312,
+                    "y2": 688,
+                    "w": 1297,
+                    "h": 688
+                }
             },
             "locale": "en-US",
             "status": "published",
@@ -74,24 +64,19 @@ const ItemService = {
             "sections": this.getSections(),
             "cover": {
                 "mediaType": "image",
-                "originalImageUrl": "https://img.playbuzz.com/image/upload/v1527790190/fai1zodaea9cohsrp0lp.jpg",
-                "url": "https://img.playbuzz.com/image/upload/c_crop/ar_100:53,c_crop/c_mfit,w_640/v1527790190/fai1zodaea9cohsrp0lp.jpg",
-                "canvasObjects": {},
-                "width": 1500,
-                "height": 1001,
+                "originalImageUrl": "https://img.playbuzz.com/image/upload/v1485701643/rrptnddw80syrlipfm4r.jpg",
+                "width": 1297,
+                "height": 688,
                 "isAnimated": false,
+                "url": "https://img.playbuzz.com/image/upload/c_crop,h_688,w_1297,x_15,y_0/v1485701643/rrptnddw80syrlipfm4r.jpg",
                 "selected": {
-                    "h": 1001,
-                    "w": 1500,
-                    "x": 0,
+                    "x": 15,
                     "y": 0,
-                    "x2": 1500,
-                    "y2": 1001
-                },
-                "fileSize": 347449,
-                "credits": "Getty Images",
-                "gettyAssetId": "908333824",
-                "gettyAccount": "Playbuzz"
+                    "x2": 1312,
+                    "y2": 688,
+                    "w": 1297,
+                    "h": 688
+                }
             },
             "readingTime": 4,
             "title": this.getTitle() || "Sample Story",
