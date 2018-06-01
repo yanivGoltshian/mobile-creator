@@ -8,6 +8,13 @@
   .img-list {
     width: 95%;
   }
+
+  .progress-line {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
   .story-title {
     font-size: 30px;
     font-weight: 700;
@@ -21,6 +28,7 @@
   }
 
   .preview {
+    position: relative;
     height: calc(100% - 45px);
     display: flex;
     flex-direction: column;

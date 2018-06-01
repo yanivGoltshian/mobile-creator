@@ -22,9 +22,3 @@ export function uploadToCloudinary(file) {
     return axios.post('https://api.cloudinary.com/v1_1/playbuzz-cld/upload', formData)
         .then(response => response.data.secure_url);
 }
-
-export function uploadAssets() {
-    return getMedia().then(mediaFiles => {
-        return Promise.all([...mediaFiles].map(file => uploadToCloudinary(file)))
-    });
-}

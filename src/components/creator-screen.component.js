@@ -6,6 +6,7 @@ import SectionSelect from "./section-select.component";
 import pubsub from 'pubsub-js';
 import Navbar from "./navbar/navbar.component";
 import ImageSection from './image-section';
+import Spinner from './spinner.component';
 
 const sectionsMap = {
     image: ImageSection,
@@ -74,14 +75,14 @@ export default class CreatorScreen extends Component {
         return (
             <div className="creator-screen">
                 <Navbar onSave={this.onSave} onPublish={this.onPublish} />
-                {this.state.uploading && <div id="p2" className="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>}
 
                 <div className="preview">
+                    {this.state.uploading && <Spinner />}
                     <div className='story-title'>{ItemService.storyTitle}</div>
                     {this.state.sections.map(section => this.renderSection(section))}
                 </div>
 
-                <SectionSelect></SectionSelect>
+                <SectionSelect />
             </div>
         );
     }

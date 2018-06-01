@@ -10,7 +10,7 @@ import 'pb-svg-icons/svg/formats/format-personality-quiz-md.svg';
 import 'pb-svg-icons/svg/formats/format-trivia-md.svg';
 import 'pb-svg-icons/svg/formats/format-convo-md.svg';
 import 'pb-svg-icons/svg/core/image.svg';
-import { uploadAssets } from '../services/image-upload.service';
+import { uploadToCloudinary, getMedia } from '../services/image-upload.service';
 
 let idCounter = 1;
 
@@ -46,16 +46,19 @@ export default class SectionSelect extends Component {
             hideSelection: true
         });
 
-        pubsub.publish('section_media_uploading');
-
-        uploadAssets().then(urls => {
-            const sections = urls.map(url => ({
-                type: 'image',
-                id: idCounter++,
-                url,
-            }));
-            pubsub.publish('sections_added', { sections });
-        });
+        getMedia()
+            .then(mediaFiles => {
+                pubsub.publish('section_media_uploading');
+                return Promise.all([...mediaFiles].map(file => uploadToCloudinary(file)))
+            })
+            .then(urls => {
+                const sections = urls.map(url => ({
+                    type: 'image',
+                    id: idCounter++,
+                    url,
+                }));
+                pubsub.publish('sections_added', { sections });
+            });
     }
 
     renderSections() {
@@ -77,7 +80,7 @@ export default class SectionSelect extends Component {
 
     render() {
         return (
-            <div className="add-section-buttons-container">
+            <div className="add-section-buttons-container" >
                 <div className={this.state.hideSelection ? 'buttons-container hide-container' : 'buttons-container'}>
                     {this.renderSections()}
                 </div>
